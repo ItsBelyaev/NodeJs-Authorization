@@ -100,6 +100,16 @@ class authController {
             console.log(e)
         }
     }
+
+
+    async getAdmins(req, res) {
+        try {
+            const admins = await User.find({ roles: "ADMIN" })
+            res.json(admins);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 }
 
 module.exports = new authController()

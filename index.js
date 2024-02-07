@@ -1,6 +1,8 @@
+require('dotenv').config()
+
 const express = require("express")
-const PORT = 5000
 const mongoose = require("mongoose")
+const PORT = process.env.PORT
 
 const authRouter = require("./authRouter")
 const app = express()
